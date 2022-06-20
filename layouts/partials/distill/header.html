@@ -34,7 +34,11 @@
   </style>
 
   <div class="content">
+    {{ if .Site.Logo }}
+    <img class="logo" scr="{{ .Site.Logo }}" height="33" />
+    {{ else if .Site.Logo }}
     <a href="/" class="logo">{{ .Site.Title }}</a>
+    {{ end }}
     <div class="nav">
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Title }}</a> 
