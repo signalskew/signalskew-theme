@@ -31,14 +31,22 @@
     d-header .logo {
       font-size: 1.5em;
     }
+
+    d-header .logo > img {
+      position: relative;
+      margin-top: -0.16em;
+      margin-bottom: -0.24em;
+    }
   </style>
 
   <div class="content">
-    {{ if .Site.Logo }}
-    <img class="logo" scr="{{ .Site.Logo }}" height="33" />
-    {{ else if .Site.Logo }}
-    <a href="/" class="logo">{{ .Site.Title }}</a>
-    {{ end }}
+    <a href="/" class="logo">
+      {{ if .Site.Params.logo }}
+        <img src="{{ .Site.Params.logo}}" />
+      {{ else if .Site.Title }}
+        {{ .Site.Title }}
+      {{ end }}
+    </a>
     <div class="nav">
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Title }}</a> 
