@@ -51,6 +51,7 @@
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Title }}</a> 
       {{ end }}
+      {{ partial "social" . }}
       <a target="_blank" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}"><i class="fa fa-rss"></i></a>
     </div>
   </div>
