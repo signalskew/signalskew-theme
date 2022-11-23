@@ -2,7 +2,7 @@ baseUrl = ""
 title = "Distill Hugo Theme"
 author = "Sanyam Kapoor"
 canonifyurls = true
-theme = "signalskew.com-theme-distillpub"
+theme = "signalskew-theme"
 
 [taxonomies]
 # TODO: Taxonomies?
