@@ -6,7 +6,7 @@ all:
 example:
 		cd $(BUILD_DIR) && hugo $(BUILD_OPTS)
 
-devel:
+devel dev:
 		cd $(BUILD_DIR) && hugo server $(BUILD_OPTS)
 
 netlify:

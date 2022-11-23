@@ -29,3 +29,6 @@ public
 # Development Related
 .vscode/
 .idea/
+
+# Temporary lock file while building
+exampleSite/.hugo_build.lock
