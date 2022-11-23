@@ -19,26 +19,32 @@ staticDir = ['static']
   [[params.social]]
   class = "fa-solid fa-user-graduate"
   url = "https://scholar.google.com/citations?user=p0NMtgsAAAAJ"
+  alt = "Google Scholar"
 
   [[params.social]]
   class = "fa-brands fa-github"
   url = "https://github.com/activatedgeek"
+  alt = "GitHub"
 
   [[params.social]]
   class = "fa-brands fa-hacker-news"
   url = "https://news.ycombinator.com/user?id=activatedgeek"
+  alt = "Hacker News"
 
   [[params.social]]
   class = "fa-brands fa-linkedin"
   url = "https://linkedin.com/in/sanyamkapoor"
+  alt = "LinkedIn"
 
   [[params.social]]
   class = "fab fa-stack-overflow"
   url = "https://stackoverflow.com/users/2425365"
+  alt = "Stack Overflow"
 
   [[params.social]]
   class = "fab fa-twitter"
   url = "https://twitter.com/activatedgeek"
+  alt = "Twitter"
 
 [menu]
 
