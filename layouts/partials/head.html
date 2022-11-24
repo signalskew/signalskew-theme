@@ -10,8 +10,8 @@
 {{ hugo.Generator }}
 
 <meta name="application-name" content="{{ .Site.Title }}">
-<meta name="theme-color" content="{{ .Site.Params.color }}">
-<meta name="msapplication-navbutton-color" content="{{ .Site.Params.color }}">
+<meta name="theme-color" content="{{ .Site.Params.theme_color }}">
+<meta name="msapplication-navbutton-color" content="{{ .Site.Params.theme_color }}">
 
 {{- if .Description -}}
   <meta name="description" content="{{ .Description | safeHTML }}" />
@@ -25,6 +25,9 @@
   <meta name="keywords" content='{{ delimit .Site.Params.Keywords "," }}' />
 {{- end -}}
 
+{{- if .Site.Params.header_metadata -}}
+  {{ .Site.Params.header_metadata | safeHTML }}
+{{- end -}}
 
 <!-- WARN 2022/11/24 11:34:55 .Author is deprecated and will be removed in a future release. Use taxonomies.
 {{/*
