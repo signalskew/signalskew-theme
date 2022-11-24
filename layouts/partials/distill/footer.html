@@ -58,12 +58,15 @@
     </div>
 
     <div class="footer-close">
-      <p>&copy; {{ now.Format "2006" }}</p>
       <p>
         <i class="fas fa-bolt" aria-hidden="true"></i> by <a target="_blank" href="https://gohugo.io/">Hugo</a> | 
         <i class="fas fa-paint-brush" aria-hidden="true"></i> by <a target="_blank" href="https://distill.pub/">Distill</a> |
         <i class="fas fa-code" aria-hidden="true"></i> by <a target="_blank" href="https://github.com/activatedgeek">@activatedgeek</a> |
         <i class="fa-solid fa-code-fork" aria-hidden="true"></i> by <a target="_blank" href="https://github.com/signalskew">@signalskew</a>
+      </p>
+      <p>
+        <!--https://ar.al/2018/06/17/formatting-an-iso-8601-date-stamp-in-hugo/-->
+        <i class="fa-solid fa-wand-magic-sparkles"></i> on <i>{{ now.Format "2006-01-02T15:04:05Z0700" }}</i>
       </p>
     </div>
   </div>
