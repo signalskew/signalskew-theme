@@ -26,7 +26,9 @@
 {{- end -}}
 
 {{- if .Site.Params.header_metadata -}}
-  {{ .Site.Params.header_metadata | safeHTML }}
+  <div style="display: none;">
+    {{ .Site.Params.header_metadata | safeHTML }}
+  </div>
 {{- end -}}
 
 <!-- WARN 2022/11/24 11:34:55 .Author is deprecated and will be removed in a future release. Use taxonomies.

@@ -15,7 +15,7 @@ staticDir = ['static']
   sourcePrefix = "https://github.com/activatedgeek/distillpub/blob/master/exampleSite"
 
   theme_color = "#0f2e3d"
-  header_metadata = '<a style="display: none;" rel="me" href="https://mastodon/@user">Mastodon</a>'
+  header_metadata = '<a rel="me" href="https://mastodon/@user"></a>'
 
   [[params.social]]
   class = "fa-solid fa-user-graduate"
