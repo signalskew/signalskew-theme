@@ -16,7 +16,6 @@ staticDir = ['static']
 
   theme_color = "#0f2e3d"
   dark_mode_feature = true
-  dark_mode_default = true
   header_metadata = '<a rel="me" href="https://mastodon/@user"></a>'
 
   [[params.social]]
