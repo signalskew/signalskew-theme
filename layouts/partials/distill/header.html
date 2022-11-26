@@ -57,12 +57,12 @@
         {{ end }}
       </a>
     </div>
-    <div> <!-- center / dark mode -->
-      {{ if .Site.Params.dark_mode_feature }}
-        <a id="dark-mode-toggle" class="fa-solid fa-moon"></a>
-      {{ end }}
+    <div> <!-- center section -->
     </div>
     <div class="nav"> <!-- menu -->
+        {{ if .Site.Params.dark_mode_feature }}
+          <a id="dark-mode-toggle" class="fa-solid fa-moon" alt="Toggle dark mode" style="cursor: pointer;"></a>
+        {{ end }}
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Title }}</a> 
       {{ end }}
