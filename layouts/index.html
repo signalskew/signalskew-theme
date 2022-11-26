@@ -130,17 +130,21 @@
   <div class="posts-list">
     {{ $paginator := .Paginate (where .Site.RegularPages "Params.listrender" "!=" false) }}
     {{ range $paginator.Pages }}
-      <a class="post-preview" href="{{ .RelPermalink }}" alt="Read post">
+      <a class="post-preview" href="{{ .RelPermalink }}" title="Read post">
         <div class="metadata">
           <p class="date">{{ dateFormat "Jan 2, 2006" .Date }}</p>
           {{ if .Params.Categories }}
-          {{ if gt (len .Params.Categories) 0 }}
-            <p class="kind">{{ index .Params.Categories 0 }}</p>
-          {{ end }}
+            {{ if gt (len .Params.Categories) 0 }}
+              <p class="kind">{{ index .Params.Categories 0 }}</p>
+            {{ end }}
           {{ end }}
           <p class="rtime">{{ .ReadingTime }} min read</p>
         </div>
-        <div class="thumbnail"><img src="{{ .Params.Thumbnail }}"></div>
+        {{ if .Params.Thumbnail }}
+          <div class="thumbnail">
+            <img src="{{ .Params.Thumbnail }}" alt="Post thumbnail">
+          </div>
+        {{ end }}
         <div class="description">
           <h2>{{ .Title }}</h2>
           <p>{{ .Params.Description }}</p>

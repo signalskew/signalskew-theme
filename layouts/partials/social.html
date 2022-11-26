@@ -1,5 +1,5 @@
 {{- range .Site.Params.social -}}
-<a target="_blank" href="{{ safeURL .url }}" alt="{{ .alt }}">
+<a target="_blank" href="{{ safeURL .url }}" title="{{ .alt }}">
   <i class="{{ .class }}" aria-hidden="true"></i>
 </a>
 {{ end }}

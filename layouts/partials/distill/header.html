@@ -49,9 +49,9 @@
 
   <div class="content">
     <div> <!-- logo / title -->
-      <a href="/" class="logo" alt="{{ .Site.Title }}">
+      <a href="/" class="logo" title="{{ .Site.Title }}">
         {{ if .Site.Params.logo }}
-          <img src="{{ .Site.Params.logo}}"/>
+          <img src="{{ .Site.Params.logo}}" alt="{{ .Site.Title }} logo"/>
         {{ else if .Site.Title }}
           {{ .Site.Title }}
         {{ end }}
@@ -61,16 +61,16 @@
     </div>
     <div class="nav"> <!-- menu -->
         {{ if .Site.Params.dark_mode_feature }}
-          <a id="dark-mode-toggle" class="fa-solid fa-moon" alt="Toggle dark mode" style="cursor: pointer;"></a>
+          <a id="dark-mode-toggle" class="fa-solid fa-moon" title="Toggle dark mode" style="cursor: pointer;"></a>
         {{ end }}
       {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" alt="{{ .Title }}">{{ .Title }}</a> 
+        <a href="{{ .URL }}" title="{{ .Title }}">{{ .Title }}</a> 
       {{ end }}
       {{ if .Site.Params.social_in_menu }}
         {{ partial "social" . }}
       {{ end }}
       {{ if .Site.Params.rss_in_menu }}
-        <a target="_blank" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" alt="RSS"><i class="fa fa-rss"></i></a>
+        <a target="_blank" href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' title="RSS"><i class="fa fa-rss"></i></a>
       {{ end }}
     </div>
   </div>
