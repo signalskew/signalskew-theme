@@ -57,4 +57,18 @@ staticDir = ['static']
   name = "About Hugo"
   title = "About"
   url = "/about"
-  weight = -10
+  weight = 10
+
+  [[menu.main]]
+  identifier = "Contact"
+  name = "Contact"
+  title = "Contact"
+  url = "/contact"
+  weight = 9
+
+  [[menu.main]]
+  identifier = "Categories"
+  name = "Categories"
+  title = "Categories"
+  url = "/categories"
+  weight = 1
