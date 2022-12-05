@@ -24,7 +24,7 @@
       padding: 10px 10px;
       background-color: {{ .Site.Params.theme_color }};
       color: red; /* If you see red anywhere, add a class to the element and make some custom CSS to handle it */
-      z-index: 2;
+      z-index: 11;
       font-family: "Lexend";
 		  font-weight: 300;
     }
@@ -98,7 +98,7 @@
 
       .logo {
         padding-left: 0px; /* scoots the logo back to a sensible position far left */
-        z-index: 3;
+        z-index: 12;
       }
 
       .menu-bundle * {
@@ -119,6 +119,8 @@
       }
       input#toggleburger:checked ~ .menu {
         display: block;
+        position: fixed;
+        z-index: 10;
       }
       .menu li:hover {
         display: inline-block;
