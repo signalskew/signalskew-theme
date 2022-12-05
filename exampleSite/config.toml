@@ -21,22 +21,22 @@ staticDir = ['static']
   rss_in_menu = true
 
   [[params.social]]
-  class = "fa-solid fa-user-graduate"
+  class = "fas fa-user-graduate"
   url = "https://scholar.google.com/citations?user=p0NMtgsAAAAJ"
   alt = "Google Scholar"
 
   [[params.social]]
-  class = "fa-brands fa-github"
+  class = "fab fa-github"
   url = "https://github.com/activatedgeek"
   alt = "GitHub"
 
   [[params.social]]
-  class = "fa-brands fa-hacker-news"
+  class = "fab fa-hacker-news"
   url = "https://news.ycombinator.com/user?id=activatedgeek"
   alt = "Hacker News"
 
   [[params.social]]
-  class = "fa-brands fa-linkedin"
+  class = "fab fa-linkedin"
   url = "https://linkedin.com/in/sanyamkapoor"
   alt = "LinkedIn"
 
