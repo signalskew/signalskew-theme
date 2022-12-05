@@ -53,22 +53,39 @@ staticDir = ['static']
 [menu]
 
   [[menu.main]]
-  identifier = "About"
-  name = "About Hugo"
-  title = "About"
+  name = "About"        #text shown on screen
+  title = "About Hugo"  #alt text for hyperlink
   url = "/about"
-  weight = 10
+  weight = 2            #higher numbers fall further in list
 
   [[menu.main]]
-  identifier = "Contact"
   name = "Contact"
   title = "Contact"
   url = "/contact"
-  weight = 9
+  weight = 10
 
   [[menu.main]]
-  identifier = "Categories"
+  identifier = "categories"   #identifier parameter only required if menu has submenu items, like below
   name = "Categories"
   title = "Categories"
   url = "/categories"
   weight = 1
+
+  [[menu.main]]
+    parent = "categories"
+    name = "Category1"
+    title = "Category1"
+    url = "/tags/category1"
+    weight = 1
+  [[menu.main]]
+    parent = "categories"
+    name = "Category2"
+    title = "Category2"
+    url = "/tags/category2"
+    weight = 2
+  [[menu.main]]
+    parent = "categories"
+    name = "Category3"
+    title = "Category3"
+    url = "/tags/category3"
+    weight = 3

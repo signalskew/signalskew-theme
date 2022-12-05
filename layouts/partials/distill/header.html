@@ -1,77 +1,187 @@
 <d-header>
 	<style>
-	  d-header {
-		display: block;
-		align-items: center;
-		background-color: {{ .Site.Params.theme_color }};
-		padding: 0.75em 4em;
-		z-index: 2;
-		color: rgba(0, 0, 0, 0.8);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-	  }
-  
-	  d-header .content {
-		/* clear: both; */              /* keep inner divs from extending below ribbon */
-		display: flex;                  /* establish flex container */
-		flex-direction: row;            /* default value; can be omitted */
-		flex-wrap: nowrap;              /* default value; can be omitted */
-		justify-content: space-between; /* switched from default */
-	  }
-  
-	  d-header a {
-		text-decoration: none;
-		color: rgba(255, 255, 255, 0.8);
-	  }
-	  d-header a:hover {
-		color: white;
-	  }
-  
-	  d-header .nav {
-		float: right;
-		font-weight: 300;
-	  }
-	  d-header .nav a {
-		font-size: 0.94em;
-		margin-left: 1.5em;
-	  }
-  
-	  d-header .logo {
-		font-size: 1.5em;
-	  }
-  
-	  d-header .logo > img {
-		position: relative;
-		margin-top: -0.16em;
-		margin-bottom: -0.24em;
-	  }
+    /* UTILITIES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /* NAVBAR STYLING STARTS */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 10px;
+      background-color: {{ .Site.Params.theme_color }};
+      color: red; /* If you see red anywhere, add a class to the element and make some custom CSS to handle it */
+      z-index: 2;
+      font-family: "Lexend";
+		  font-weight: 300;
+    }
+    .navbar a, .navbar label {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      padding-left: 50px;
+    }
+    
+    /* NAVBAR MENU */
+    .menu-bundle {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      padding-right: 5px;
+    }
+    .menu {
+      display: flex;
+      gap: 1em;
+      font-size: 15px;
+    }
+    .menu li {
+      padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown {
+      background-color: {{ .Site.Params.theme_color }};
+      padding: 1em 0;
+      position: absolute; /*WITH RESPECT TO PARENT*/
+      display: none;
+      border-radius: 8px;
+      top: 35px;
+    }
+    .dropdown li + li {
+      margin-top: 10px;
+    }
+    .dropdown li {
+      padding: 0.5em 1em;
+      width: 8em;
+      text-align: center;
+    }
+    .parent {
+      position: relative;
+    }
+    .parent:hover .dropdown {
+      display: block;
+    }
+
+    /*RESPONSIVE NAVBAR MENU STARTS*/
+    /* CHECKBOX HACK */
+    input#toggleburger {
+      display: none;
+    } 
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+      display: none;
+      font-size: 18px;
+      user-select: none; /* Make sure this is not user selectable yet */
+    }
+
+    /* APPLYING MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 13px 13px;
+      }
+
+      .logo {
+        padding-left: 0px; /* scoots the logo back to a sensible position far left */
+        z-index: 3;
+      }
+
+      .menu-bundle * {
+        padding: 0px 0px;
+      }
+
+      .menu {
+        display:none;
+        position: absolute;
+        background-color:{{ .Site.Params.theme_color }};
+        right: 0;
+        left: 0;
+        text-align: left;
+        padding: 16px 0;
+      }
+      .menu li + li {
+        margin-top: 12px;
+      }
+      input#toggleburger:checked ~ .menu {
+        display: block;
+      }
+      .menu li:hover {
+        display: inline-block;
+      }
+      .hamburger {
+        display: block;
+
+      }
+      .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+      }
+    }
 	</style>
   
-	<div class="content">
-	  <div> <!-- logo / title -->
-		<a href="/" class="logo" title="{{ .Site.Title }}">
-		  {{ if .Site.Params.logo }}
-			<img src="{{ .Site.Params.logo}}" alt="{{ .Site.Title }} logo"/>
-		  {{ else if .Site.Title }}
-			{{ .Site.Title }}
-		  {{ end }}
-		</a>
+	<nav class="navbar">
+	  <div class="logo">
+      <a href="/" title="{{ .Site.Title }}">
+        {{ if .Site.Params.logo }}
+        <img src="{{ .Site.Params.logo}}" alt="{{ .Site.Title }} logo"/>
+        {{ else if .Site.Title }}
+        {{ .Site.Title }}
+        {{ end }}
+      </a>
 	  </div>
-	  <div> <!-- center section -->
-	  </div>
-	  <div class="nav"> <!-- menu -->
-		  {{ if .Site.Params.dark_mode_feature }}
-			<a id="dark-mode-toggle" class="fa-solid fa-moon" title="Toggle dark mode" style="cursor: pointer;"></a>
-		  {{ end }}
-		{{ range .Site.Menus.main }}
-		  <a href="{{ .URL }}" title="{{ .Title }}">{{ .Title }}</a> 
-		{{ end }}
-		{{ if .Site.Params.social_in_menu }}
-		  {{ partial "social" . }}
-		{{ end }}
-		{{ if .Site.Params.rss_in_menu }}
-		  <a target="_blank" href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' title="RSS"><i class="fa fa-rss"></i></a>
-		{{ end }}
-	  </div>
-	</div>
-  </d-header>
+    <div class="menu-bundle">
+      <!-- DARK MODE BUTTON (if enabled) -->
+      {{ if .Site.Params.dark_mode_feature }}
+        <a id="dark-mode-toggle" class="fa-solid fa-moon" title="Toggle dark mode" style="cursor: pointer; padding-right: 5px;"></a>
+      {{ end }}
+      <ul class="nav-links">
+        <!-- HAMBURGER ICON icon -->
+        <input type="checkbox" id="toggleburger" />
+        <label for="toggleburger" class="hamburger fa-solid fa-bars" style="cursor: pointer;"></label>
+        <!-- NAVIGATION MENU -->
+        <div class="menu">
+          <!-- MENUS -->
+          {{ range .Site.Menus.main }}
+            <!-- SUBMENUS -->
+            {{ if .HasChildren }}
+              <li class="parent">
+                <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+                <ul class="dropdown">
+                  {{ range .Children }}
+                    <li><a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+                  {{ end}}
+                </ul>
+              </li>
+            {{ else }}
+              <li><a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+            {{ end }}
+          {{ end }}
+          <!-- SOCIAL LINKS (if enabled) -->
+          {{ if .Site.Params.social_in_menu }}
+            <li>{{ partial "social" . }}</li>
+          {{ end }}
+          <!-- RSS LINK (if enabled) -->
+          {{ if .Site.Params.rss_in_menu }}
+            <li><a target="_blank" href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' title="RSS"><i class="fa fa-rss"></i></a></li>
+          {{ end }}
+        </div>
+      </ul>
+   </div>
+	</nav>
+</d-header>
