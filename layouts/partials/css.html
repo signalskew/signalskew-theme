@@ -13,25 +13,45 @@
 <!-- Dark Mode -->
 <link disabled id="dark-mode-theme" rel="stylesheet" href="/darkmode/darkmode.css">
 
-<!-- Lexend font -->
 <style>
+  /* Lexend font loading */
   @font-face {
-      font-family: 'Lexend';
-      font-style: normal;
-      font-weight: 300;
-      src: url('/fonts/lexend-v14-latin/lexend-v14-latin-300.eot'); /* IE9 Compat Modes */
-      src: local(''),
-           url('/fonts/lexend-v14-latin/lexend-v14-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('/fonts/lexend-v14-latin/lexend-v14-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-           url('/fonts/lexend-v14-latin/lexend-v14-latin-300.woff') format('woff'), /* Modern Browsers */
-           url('/fonts/lexend-v14-latin/lexend-v14-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-           url('/fonts/lexend-v14-latin/lexend-v14-latin-300.svg#Lexend') format('svg'); /* Legacy iOS */
-      font-display: swap;
-    }
-    
-    
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/lexend-v14-latin/lexend-v14-latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+          url('/fonts/lexend-v14-latin/lexend-v14-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('/fonts/lexend-v14-latin/lexend-v14-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+          url('/fonts/lexend-v14-latin/lexend-v14-latin-300.woff') format('woff'), /* Modern Browsers */
+          url('/fonts/lexend-v14-latin/lexend-v14-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('/fonts/lexend-v14-latin/lexend-v14-latin-300.svg#Lexend') format('svg'); /* Legacy iOS */
+    font-display: swap;
+  }
+  /* Applying paragraph font (Lexend) */
   p {
       font-family: "Lexend", Helvetica, Arial, sans-serif;
       font-weight: 300;
+  }
+
+  /* Sticky Footer (https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers) */
+  html, body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-header, .page-footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .page-body {
+      flex-grow: 1;
   }
   </style>
