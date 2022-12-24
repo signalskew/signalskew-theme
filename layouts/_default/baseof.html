@@ -14,24 +14,16 @@
   {{ end }}
 </head>
 <body>
-  <div class="wrapper">
-    <div class="page-header">
-      {{ block "header" . }}
-        {{ partial "distill/header" . }}
-      {{ end }}
-    </div>
-    
-    <div class="page-body">
-      {{ block "body" . }}
-      <!-- Add Body Here -->
-      {{ end }}
-    </div>
+  {{ block "header" . }}
+    {{ partial "distill/header" . }}
+  {{ end }}
+  
+  {{ block "body" . }}
+  <!-- Add Body Here -->
+  {{ end }}
 
-    <div class="page-footer">
-      {{ block "footer" . }}
-        {{ partial "distill/footer" . }}
-      {{ end }}
-    </div>
-  </div>
+  {{ block "footer" . }}
+    {{ partial "distill/footer" . }}
+  {{ end }}
 </body>
 </html>
