@@ -1,7 +1,7 @@
 +++
 title = "About Hugo"
 date = "2014-04-09"
-description = "This page is about Hugo."
+description = "This post is about Hugo. The sentence you're reading comes from the <i>description</i> metadata."
 thumbnail = "https://i.ytimg.com/vi/qtIqKaDlqXo/maxresdefault.jpg"
 categories = [
   "info",

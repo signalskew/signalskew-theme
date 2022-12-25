@@ -1,6 +1,6 @@
 +++
 title = "Attention and Augmented Recurrent Neural Networks"
-description = "This is a demo article."
+description = "This is a demo article. No dtitle.html file exists so the <i>description</i> metadata is used for this subheading text (the same thing used on the posts home page)."
 date = "2017-01-10"
 thumbnail = ""
 categories = [
