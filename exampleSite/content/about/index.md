@@ -17,18 +17,7 @@ tags = []
   [[distill.authors]]
   author = "Steve Francia"
   authorURL = "http://spf13.com/"
-
-    [[distill.authors.affiliations]]
-    name = "Google"
-    url = "https://google.com"
-
-  [[distill.authors]]
-  author = "Bjørn Erik Pedersen"
-  authorURL = "https://bep.is/"
-
-    [[distill.authors.affiliations]]
-    name = "BEP Consulting"
-    url = "https://bepsays.com/en/"
+  
 +++
 
 Hugo is the **world’s fastest framework for building websites**. It is written in Go.
