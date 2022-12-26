@@ -22,6 +22,10 @@ tags = []
 
 Hugo is the **world’s fastest framework for building websites**. It is written in Go.
 
+{{< html "snippet.html" >}}
+
+{{< md "snippet.md" >}}
+
 It makes use of a variety of open source projects including:
 
 * https://github.com/russross/blackfriday
@@ -31,3 +35,5 @@ It makes use of a variety of open source projects including:
 * https://github.com/spf13/viper
 
 Learn more and contribute on [GitHub](https://github.com/gohugoio).
+
+
