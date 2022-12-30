@@ -53,7 +53,7 @@
 <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 
-<title>{{ .Title }}</title>
+<title>{{ .Title | emojify }}</title>
 
 <!-- See https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates -->
 {{- template "_internal/disqus.html" . -}}
