@@ -147,7 +147,7 @@
         {{ end }}
         <div class="description">
           <h2>{{ .Title }}</h2>
-          <p>{{ .Params.Description | safeHTML }}</p>
+          <p>{{ .Params.Description | safeHTML | emojify}}</p>
         </div>
       </a>
     {{ end }}

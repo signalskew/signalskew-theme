@@ -1,1 +1,1 @@
-This is a Markdown snippet inserted with the {{<code language="go">}}&#123;&#123;< md "snippet.md" >&#125;&#125;{{</code>}} shortcode.
+This is a Markdown snippet inserted with the {{<code language="go">}}&#123;&#123;< md "snippet.md" >&#125;&#125;{{</code>}} shortcode. Emojis work in any markdown file (I :heart: Hugo!)
