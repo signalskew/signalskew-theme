@@ -10,9 +10,7 @@ disableByline = true
 
 {{< figure src="tumblr_nt8ek3qioK1ue62ito1_1280.png" title="Something went wrong" alt="A graph whee the values are clearly out of control" >}}
 
-Image Courtesy: https://lossfunctions.tumblr.com/image/126914340062.
-
-More fun at https://lossfunctions.tumblr.com.
+Image courtesy of https://lossfunctions.tumblr.com/image/126914340062. More fun at https://lossfunctions.tumblr.com.
 
 
 
